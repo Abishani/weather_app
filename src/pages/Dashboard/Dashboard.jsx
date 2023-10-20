@@ -21,7 +21,7 @@ const Dashboard = () => {
     setlogout(true);
   };
 
-  const url = `https://api.openweathermap.org/data/2.5/weather?q=${location}&appid=2175e2a9b0f99dea937c64b52cc44fa2`;
+  const url = `https://api.openweathermap.org/data/2.5/weather?q=${location}&appid={API_KEY}`;
 
   const clickFunctionHandler = (e) => {
     axios.get(url).then((response) => {
@@ -35,7 +35,7 @@ const Dashboard = () => {
     const fetchData = async () => {
       try {
         const response = await axios.get(
-          `https://api.openweathermap.org/data/2.5/weather?q=${defaultLocation}&units=imperial&appid=2175e2a9b0f99dea937c64b52cc44fa2`
+          `https://api.openweathermap.org/data/2.5/weather?q=${defaultLocation}&units=imperial&appid={API_KEY}`
         );
         setData(response.data);
       } catch (error) {
